@@ -194,18 +194,28 @@ const skillsData = [
 
 
 function Header({ links }: { links: NavLink[] }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
   return (
     <header className="site-header">
       <div className="header-inner">
         <div className="header-logo">
           <a href="#"><img src={logoImg} alt="Logo" /></a>
         </div>
-        <nav>
+        <button className={`hamburger ${isMenuOpen ? "active" : ""}`} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav className={isMenuOpen ? "nav-open" : ""}>
           {links.map((link) => (
-            <a key={link.slug} href={link.slug}>{link.label}</a>
+            <a key={link.slug} href={link.slug} onClick={() => setIsMenuOpen(false)}>
+              {link.label}
+            </a>
           ))}
         </nav>
       </div>
+      {isMenuOpen && <div className="nav-overlay" onClick={toggleMenu}></div>}
     </header>
   );
 }
