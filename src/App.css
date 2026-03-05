@@ -25,10 +25,12 @@ body {
 
 /* --- Header --- */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 999;
+  left: 0;
   width: 100%;
+  z-index: 1000;
+  
   background: rgba(11, 17, 33, 0.85); 
   backdrop-filter: blur(12px); 
   -webkit-backdrop-filter: blur(12px); 
@@ -44,9 +46,27 @@ body {
   align-items: center;
 }
 
-.header-logo img { height: 30px; }
-.site-header nav { display: flex; gap: 2.5rem; font-size: 0.85rem; }
-.site-header nav a { color: var(--text-main); text-decoration: none; letter-spacing: 0.5px; }
+.header-logo img {
+  height: 32px;
+  display: block;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: 'JetBrains Mono', monospace;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--point-blue);
+}
 
 .section-title {
   font-size: 1.1rem;
@@ -733,7 +753,7 @@ body {
   );
 }
 
-.site-header, .hero, .about, .projects, .skills, .contact-section {
+.hero, .about, .projects, .skills, .contact-section {
   position: relative;
   z-index: 10;
 }
