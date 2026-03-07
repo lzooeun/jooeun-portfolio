@@ -282,8 +282,8 @@ function Hero() {
         <img src={customNameImg} alt="JOOEUN LEE" className="custom-name-img" />
         <p className="hero-subtitle">Designer-Minded Developer. Bridging Creativity & Code</p>
         <div className="hero-socials">
-          <a href="#"><FaGithub /></a>
-          <a href="#"><FaLinkedin /></a>
+          <a href="https://github.com/lzooeun"><FaGithub /></a>
+          <a href="https://www.linkedin.com/in/jooeun-lee-547825162/"><FaLinkedin /></a>
         </div>
       </div>
       <div className="hero-right">
@@ -301,6 +301,7 @@ function Hero() {
               <span className="c-blue">const</span> <span className="c-white">developer = {"{"}</span><br />
               &nbsp;&nbsp;name: <span className="c-string">'Jooeun Lee'</span>,<br />
               &nbsp;&nbsp;skills: [<span className="c-string">'React', 'JavaScript', 'WordPress'</span>,<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="c-string">'Python', 'Django', 'Git'</span>],<br />
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="c-string">'Photoshop', 'Illustrator', 'Python'</span>],<br />
               &nbsp;&nbsp;hardWorker: <span className="c-blue">true</span>,<br />
               &nbsp;&nbsp;quickLearner: <span className="c-blue">true</span><br />
