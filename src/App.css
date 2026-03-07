@@ -29,7 +29,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 988;
   
   background: rgba(11, 17, 33, 0.85); 
   backdrop-filter: blur(12px); 
@@ -285,6 +285,11 @@ nav a:hover {
   flex-shrink: 0;
 }
 
+.badge.academic { border-color: #38bdf8; color: #38bdf8; background: rgba(56, 189, 248, 0.1); }
+.badge.cms { border-color: #f59e0b; color: #f59e0b; background: rgba(245, 158, 11, 0.1); }
+.badge.live { border-color: #a855f7; color: #a855f7; background: rgba(168, 85, 247, 0.1); }
+.badge.progress { border-color: #94a3b8; color: #94a3b8; background: rgba(148, 163, 184, 0.1); }
+
 .project-card p { 
   color: var(--text-muted); 
   font-size: 0.85rem; 
@@ -299,6 +304,29 @@ nav a:hover {
   color: var(--point-blue); 
 }
 
+.project-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.tech-tag-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.project-card:hover .tech-tag-item {
+  border-color: rgba(56, 189, 248, 0.3);
+  color: var(--text-main);
+}
+
 /* --- Slide-out Drawer CSS --- */
 .drawer-overlay {
   position: fixed;
@@ -308,7 +336,7 @@ nav a:hover {
   height: 100vh;
   background: rgba(11, 17, 33, 0.8);
   backdrop-filter: blur(5px);
-  z-index: 998;
+  z-index: 3000;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease-in-out;
@@ -331,7 +359,7 @@ nav a:hover {
   background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
   background-size: 20px 20px;
   border-left: 1px solid var(--grid-dot);
-  z-index: 999;
+  z-index: 3001;
   overflow-y: auto;
   transform: translateX(100%);
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
@@ -375,7 +403,8 @@ nav a:hover {
 
 .drawer-media {
   width: 100%;
-  height: 250px;
+  aspect-ratio: 520 / 250;
+  height: auto;
   background: rgba(15, 23, 42, 0.6);
   border: 1px dashed var(--point-blue);
   border-radius: 6px;
@@ -390,7 +419,7 @@ nav a:hover {
 .drawer-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: top;
 }
 
@@ -773,7 +802,6 @@ nav a:hover {
 
 .hero, .about, .projects, .skills, .contact-section {
   position: relative;
-  z-index: 10;
 }
 
 .tilt-wrapper {
@@ -892,6 +920,20 @@ nav a:hover {
     transform: none !important;
   }
 
+  .code-inner {
+    padding: 1rem;
+    font-size: 0.75rem;
+    overflow-x: auto;
+    white-space: pre;
+    word-break: normal;
+    background-color: #0f172a;
+  }
+
+  .hero-right {
+    width: 100%;
+    padding: 0 10px;
+  }
+
   .about {
     grid-template-columns: 1fr;
     text-align: left;
@@ -936,21 +978,33 @@ nav a:hover {
   }
 
   .drawer-content {
-    padding: 2rem 1.5rem;
+    padding-top: 5rem;
+  }
+
+  .close-btn {
+    position: sticky;
+    top: 0;
+    background: var(--bg-color);
+    width: fit-content;
+    z-index: 3002;
+  }
+
+  .drawer-content {
+    padding: 6rem 1.5rem 8rem 1.5rem;
   }
 
   .drawer-media {
-    height: 180px;
+    height: auto; 
   }
 
   .drawer-actions {
     flex-direction: column;
+    margin-bottom: 2rem;
   }
 }
 
 /* --- 3. 작은 모바일 (화면 너비 480px 이하) --- */
 @media screen and (max-width: 480px) {
-  /* 아주 작은 화면에서는 폰트와 여백을 한 번 더 줄여줍니다 */
   .contact-headline {
     font-size: 1.5rem;
   }

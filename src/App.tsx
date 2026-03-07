@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, type MouseEvent } from "react";
 import "./App.css";
-import { FaReact, FaJs, FaPython, FaHtml5, FaDatabase, FaFigma, FaWordpress, FaGithub, FaLinkedin, FaLink } from "react-icons/fa6";
+import { FaReact, FaJs, FaPython, FaHtml5, FaDatabase, FaFigma, FaWordpress, FaGithub, FaLinkedin, FaLink, FaRobot } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 import emailjs from '@emailjs/browser'
 import { FaDiscord } from "react-icons/fa6";
@@ -43,18 +43,19 @@ export default function App() {
 const projectsData: Project[] = [
   { 
     title: "TaekTube Tournament", 
-    status: "LIVE / FULL-STACK", 
-    description: "E-sports tournament management system featuring a custom matchmaking algorithm and an automated Discord bot linked with a Django web platform.", 
-    longDesc: "Designed, developed, and operated a comprehensive e-sports tournament platform. By integrating a custom Discord bot (discord.py) with a Django-based web application, I fully automated the administrative workflow—from team registration and result submission to generating balanced brackets based on player tiers.",
+    status: "FULL-STACK / LIVE", 
+    description: "A fully automated League of Legends e-sports tournament platform powered by a custom Discord bot and a real-time Django web dashboard.", 
+    longDesc: "A comprehensive digital infrastructure built to manage a custom League of Legends tournament. I co-planned the event and developed a seamless ecosystem bridging Discord and the Web. The project features a 24/7 automated Discord bot handling participant onboarding, team sign-ups, and match result processing, strictly synchronized with a Django-based dashboard that tracks real-time rosters, schedules, and dynamic tournament brackets. This platform was specifically built and deployed for a local Korean-speaking gaming community. The UI and bot commands are localized in Korean, but the underlying backend logic, database, and system architecture are fully language-agnostic.",
     features: [
-      "Engineered a custom matchmaking algorithm for tier balancing and automated bracket generation.",
-      "Automated team registration, role assignment, and match result submissions via Discord bot.",
-      "Built a 24/7 Django web platform for participants to track real-time schedules and player statistics."
+      "Discord-Web Synchronization: Built a full-stack Django web platform that shares a real-time database with a custom discord.py bot, instantly reflecting team rosters, live scores, and tournament brackets.",
+      "Automated Tournament Operations: Developed an interactive Discord bot utilizing Slash Commands and UI Views (Buttons) to completely automate team sign-ups, match result submissions, and multi-game (Bo3/Bo5) score tracking.",
+      "Dynamic Bracket Progression: Implemented a backend logic that automatically determines match winners, updates standings based on complex tie-breakers (including speedrun records), and generates subsequent knockout stage matchups without manual intervention.",
+      "Cohesive UI/UX Design: Led the end-to-end design direction, applying a striking Neo-Brutalism aesthetic consistently across the web dashboard, player cards, and custom Discord announcement banners."
     ],
-    tech: "Python, Django, discord.py, API",
+    tech: "Django, Python, discord.py, JavaScript, API",
     github: "https://github.com/lzooeun/tournament",
     demo: "https://taektube.lol/",
-    image: "https://via.placeholder.com/600x300/0f172a/38bdf8?text=TaekTube+Demo+GIF"
+    image: "/assets/taektube.gif"
   },
   { 
     title: "SideEye Tracker", 
@@ -67,16 +68,20 @@ const projectsData: Project[] = [
       "Developed asynchronous event-driven logic using Python and the discord.py library."
     ],
     tech: "Python, discord.py, Riot API",
-    github: "https://github.com/lzooeun/sideeye-discord-bot"
+    github: "https://github.com/lzooeun/sideeye-discord-bot",
+    invite: "https://discord.com/oauth2/authorize?client_id=1474908081740841171&permissions=8&integration_type=0&scope=bot",
+    image: "assets/side-eye.png"
   },
   { 
     title: "Boundless Books", 
     status: "IN PROGRESS", 
-    description: "Full-stack e-commerce bookstore featuring secure payments, user authentication, and a dynamic review system.", 
+    description: "Full-stack Django e-commerce bookstore featuring secure payments, user authentication, and dynamic reviews.", 
+    longDesc: "A collaborative academic project building a comprehensive online bookstore using the Django framework. I led the UI/UX design direction while actively implementing core backend functionalities to bridge the gap between aesthetics and secure database operations.",
     features: [
-      "Implementing a secure payment gateway and comprehensive user authentication system.",
-      "Developing a dynamic customer review and product rating feature.",
-      "Designing a robust database architecture using Django ORM and SQLite/PostgreSQL."
+      "Led the UI/UX design, creating a seamless and engaging shopping experience.",
+      "Implemented a secure payment gateway and a comprehensive user authentication system.",
+      "Developed a dynamic customer review and product rating feature using Django ORM.",
+      "Collaborated effectively within a team environment to merge frontend views with backend logic."
     ],
     tech: "Django, Python, SQLite",
     github: "https://github.com/582-41B-VA/boundless-books"
@@ -84,15 +89,17 @@ const projectsData: Project[] = [
   { 
     title: "NYT Spelling Bee", 
     status: "ACADEMIC", 
-    description: "Interactive word puzzle game inspired by NYT, built with collaborative frontend logic and a minimalist UI.", 
+    description: "An interactive word puzzle game built with React, featuring core NYT game logic and a minimalist UI.", 
+    longDesc: "A React-based recreation of the popular NYT Spelling Bee puzzle, developed in a two-person team. I took charge of the visual design and core interactions, ensuring a highly responsive, minimalist interface while implementing the complex scoring and word-validation logic.",
     features: [
-      "Recreated the core game logic and scoring system of the NYT Spelling Bee puzzle using React.",
-      "Designed a highly responsive and minimalist user interface focusing on user experience.",
-      "Collaborated in a two-person team, utilizing Git for version control and agile workflow."
+      "Spearheaded the UI/UX design, focusing on a minimalist and highly responsive user experience.",
+      "Recreated and implemented the core game logic and dynamic scoring system using React states.",
+      "Collaborated in a two-person team (with Intessar), utilizing Git for version control and agile workflow."
     ],
     tech: "React.js, JavaScript, CSS3",
-    github: "https://github.com/582-41F-VA/project-jooeun_intessar",
-    demo: "#"
+    github: "https://github.com/lzooeun/nyt-spelling-bee",
+    demo: "https://nyt-spelling-bee-alpha.vercel.app/",
+    image: "/assets/spellingbee.png"
   },
   { 
     title: "Spotify Lo-Fi Player", 
@@ -105,19 +112,24 @@ const projectsData: Project[] = [
       "Utilized React hooks for efficient state management and asynchronous API calls."
     ],
     tech: "React.js, Spotify API",
-    github: "https://github.com/lzooeun/lofi-player"
+    github: "https://github.com/lzooeun/lofi-player",
+    demo: "https://lofi-player-ruby.vercel.app/",
+    image: "/assets/lofi-player.gif"
   },
   { 
     title: "Palette Atelier", 
-    status: "CMS", 
-    description: "Custom WordPress CMS website tailored for a personal color consulting service.", 
+    status: "CMS / WORDPRESS", 
+    description: "A fully custom WordPress theme built from scratch, featuring dynamic front-page sections and an integrated blog.", 
+    longDesc: "A bespoke WordPress CMS website developed from concept to final PHP coding without relying on pre-built themes or page builders. The primary focus was on establishing a robust backend connection, ensuring every section of the website can be intuitively edited directly through the wp-admin dashboard.",
     features: [
-      "Customized a WordPress theme to strictly align with the brand identity of a personal color consulting service.",
-      "Optimized the Content Management System (CMS) for intuitive content updates by the client.",
-      "Ensured cross-browser compatibility and a fully mobile-responsive layout."
+      "Coded the theme directly from scratch (PHP/CSS) without using design tools like Figma.",
+      "Integrated dynamic WordPress logic to make all homepage sections fully editable via wp-admin.",
+      "Implemented a fully functional blog system utilizing the standard WordPress Loop.",
+      "Ensured a highly responsive and lightweight grid-based aesthetic."
     ],
     tech: "WordPress, PHP, CSS",
-    demo: "#"
+    demo: "https://palette-atelier-static.vercel.app/",
+    image: "assets/palette-atelier.gif"
   },
   { 
     title: "Vinyl & Vibes", 
@@ -129,51 +141,59 @@ const projectsData: Project[] = [
       "Established a consistent design system, including typography, color palettes, and grid layouts."
     ],
     tech: "Figma, Prototyping",
-    demo: "https://www.figma.com/design/sd4rATFjP60gndcUgl1ULX/Phase-4---High-Fidelity-UI?node-id=0-1&t=25Ah25z8FCjFEPvj-1"
+    github: "https://github.com/lzooeun/palette-atelier-theme",
+    demo: "https://www.figma.com/design/sd4rATFjP60gndcUgl1ULX/Phase-4---High-Fidelity-UI?node-id=0-1&t=25Ah25z8FCjFEPvj-1",
+    image: "assets/vinyl_vibes.gif"
   }
 ];
 const skillsData = [
     { 
       title: "HTML5 / CSS3", 
       icon: <FaHtml5 />,
-      description: "Semantic markup, responsive design, and precise styling.",
+      description: "Semantic markup and responsive grid layouts directly coded without builders.",
       level: 95 
     },
     { 
       title: "JavaScript / TS", 
       icon: <FaJs />,
-      description: "Core logic, ES6+ features, and type-safe coding.",
+      description: "Core logic implementation, DOM manipulation, and asynchronous operations.",
       level: 85 
     },
     { 
       title: "React.js", 
       icon: <FaReact />,
-      description: "Build interactive UI & state management.",
+      description: "Interactive UI development and complex state management (e.g., game logic).",
       level: 90 
     },
     { 
       title: "Python / Django", 
       icon: <FaPython />,
-      description: "Backend architecture and RESTful API development.",
+      description: "Full-stack architecture, custom matchmaking algorithms, and secure auth.",
       level: 80 
-    },
-    { 
-      title: "SQL & Databases", 
-      icon: <FaDatabase />,
-      description: "Database design, queries, and data management.",
-      level: 75 
-    },
-    { 
-      title: "Figma", 
-      icon: <FaFigma />,
-      description: "UI/UX wireframing, prototyping, and design systems.",
-      level: 95 
     },
     { 
       title: "WordPress (PHP)", 
       icon: <FaWordpress />,
-      description: "Custom CMS theme development and optimization.",
+      description: "100% Custom theme development from scratch and dynamic wp-admin integration.",
       level: 85 
+    },
+    { 
+      title: "SQL & Databases", 
+      icon: <FaDatabase />,
+      description: "Relational database design, ORM queries, and efficient data management.",
+      level: 75 
+    },
+    { 
+      title: "APIs & Automation", 
+      icon: <FaRobot />,
+      description: "RESTful API integration and building 24/7 automated Discord bots (discord.py).",
+      level: 80 
+    },
+    { 
+      title: "UI/UX & Figma", 
+      icon: <FaFigma />,
+      description: "Minimalist design systems, wireframing, and user-centric prototyping.",
+      level: 90 
     }
   ];
 
@@ -347,6 +367,15 @@ function Projects({ projects }: { projects: Project[] }) {
     setIsOpen(false);
     document.body.style.overflow = "auto";
   }
+
+  const getBadgeClass = (status: string) => {
+    if (status.includes("ACADEMIC")) return "academic";
+    if (status.includes("CMS") || status.includes("WORDPRESS")) return "cms";
+    if (status.includes("LIVE") || status.includes("FULL-STACK")) return "live";
+    if (status.includes("IN PROGRESS")) return "progress";
+    return "";
+  }
+
   return (
     <section id="projects" className="projects">
       <h2 className="section-title">Projects</h2>
@@ -355,14 +384,20 @@ function Projects({ projects }: { projects: Project[] }) {
           <div 
             key={idx} 
             className="project-card"
-            onClick={() => handleOpenDrawer(proj)} // 카드 클릭 이벤트 추가
+            onClick={() => handleOpenDrawer(proj)}
           >
             <div className="card-header">
               <h4>{proj.title}</h4>
-              <span className="badge">{proj.status}</span>
+              <span className={`badge ${getBadgeClass(proj.status)}`}>{proj.status}</span>
             </div>
             <p>{proj.description}</p>
-            <span className="project-tech">{proj.tech}</span>
+            <div className="project-tech-list">
+              {proj.tech.split(',').map((techItem, idx) => (
+                <span key={idx} className="tech-tag-item">
+                  {techItem.trim()}
+                </span>
+              ))}
+            </div>
           </div>
         ))}
       </div>
