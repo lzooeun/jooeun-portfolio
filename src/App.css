@@ -1012,3 +1012,9 @@ nav a:hover {
     padding: 1.5rem;
   }
 }
+
+@media (hover: none) and (pointer: coarse) {
+  .bg-spotlight {
+    display: none !important;
+  }
+}

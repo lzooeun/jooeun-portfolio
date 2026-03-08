@@ -25,6 +25,9 @@ type Project = {
 
 export default function App() {
   useEffect(() => {
+    document.documentElement.style.setProperty('--mouse-x', `-9999px`);
+    document.documentElement.style.setProperty('--mouse-y', `-9999px`);
+
     const handleGlobalMouseMove = (e: globalThis.MouseEvent) => {
       document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
       document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
@@ -301,7 +304,7 @@ function Hero() {
               <span className="c-blue">const</span> <span className="c-white">developer = {"{"}</span><br />
               &nbsp;&nbsp;name: <span className="c-string">'Jooeun Lee'</span>,<br />
               &nbsp;&nbsp;skills: [<span className="c-string">'React', 'JavaScript', 'WordPress'</span>,<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="c-string">'Python', 'Django', 'Git'</span>],<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="c-string">'Python', 'Django', 'Git'</span>,<br />
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="c-string">'Photoshop', 'Illustrator', 'Python'</span>],<br />
               &nbsp;&nbsp;hardWorker: <span className="c-blue">true</span>,<br />
               &nbsp;&nbsp;quickLearner: <span className="c-blue">true</span><br />
