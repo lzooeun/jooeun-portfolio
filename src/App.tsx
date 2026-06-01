@@ -189,14 +189,20 @@ const skillsData = [
     { 
       title: "APIs & Automation", 
       icon: <FaRobot />,
-      description: "RESTful API integration and building 24/7 automated Discord bots (discord.py).",
+      description: "REST API integration, Slack command workflows, webhook testing, and automated Discord bots.",
       level: 80 
+    },
+    { 
+      title: "SFMC / Marketing Tech", 
+      icon: <FaDatabase />,
+      description: "CloudPages, AMPScript, Data Extensions, Journey QA, and CRM/Pardot sync troubleshooting.",
+      level: 70 
     },
     { 
       title: "UI/UX & Figma", 
       icon: <FaFigma />,
       description: "Minimalist design systems, wireframing, and user-centric prototyping.",
-      level: 90 
+      level: 100 
     }
   ];
 
@@ -286,7 +292,7 @@ function Hero() {
         <p className="hero-subtitle">Designer-Minded Developer. Bridging Creativity & Code</p>
         <div className="hero-socials">
           <a href="https://github.com/lzooeun"><FaGithub /></a>
-          <a href="https://www.linkedin.com/in/jooeun-lee-547825162/"><FaLinkedin /></a>
+          <a href="https://www.linkedin.com/in/jooeun-lee-dev"><FaLinkedin /></a>
         </div>
       </div>
       <div className="hero-right">
@@ -305,7 +311,8 @@ function Hero() {
               &nbsp;&nbsp;name: <span className="c-string">'Jooeun Lee'</span>,<br />
               &nbsp;&nbsp;skills: [<span className="c-string">'React', 'JavaScript', 'WordPress'</span>,<br />
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="c-string">'Python', 'Django', 'Git'</span>,<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="c-string">'Photoshop', 'Illustrator', 'Python'</span>],<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="c-string">'SFMC', 'AMPScript', 'APIs'</span>,<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="c-string">'Photoshop', 'Illustrator', 'AdobeXD'</span>],<br />
               &nbsp;&nbsp;hardWorker: <span className="c-blue">true</span>,<br />
               &nbsp;&nbsp;quickLearner: <span className="c-blue">true</span><br />
               <span className="c-white">{"};"}</span>
@@ -327,7 +334,7 @@ function About() {
           Implement through Code.
         </h3>
         <p className="about-intro">
-          Hi, I'm <strong>Jooeun Lee</strong>. I am a <strong>Design-minded Developer</strong> blending visual aesthetics with technical logic.
+          Hi, I'm <strong>Jooeun Lee</strong>. I am a <strong>Design-minded Developer</strong> who blends visual aesthetics, technical logic, and marketing technology workflows.
         </p>
         <div className="about-specs">
           <div className="spec-item">
@@ -336,7 +343,7 @@ function About() {
           </div>
           <div className="spec-item">
             <span className="spec-label">Tech_Logic</span>
-            <p><strong>Vanier College</strong> / Web Development. Mastering full-stack implementation to bring designs to life through clean, efficient code.</p>
+            <p><strong>Vanier College</strong> Web Development. Building full-stack applications, API-connected workflows, and Salesforce Marketing Cloud campaign experiences through clean, efficient code.</p>
           </div>
           <div className="spec-item">
             <span className="spec-label">My_Vibe</span>
@@ -579,7 +586,7 @@ function Contact() {
             Whether you have a question or a project in mind, feel free to deploy a message via the terminal below!
           </p>
           <div className="contact-info-list">
-            <p><strong>EMAIL:</strong> your.email@example.com</p>
+            <p><strong>EMAIL:</strong> jooeun.lee@me.com</p>
           </div>
         </div>
 
